@@ -25,7 +25,7 @@ webpack --config webpack.***.js
 webpack (会寻找配置文件webpack.config.js)
 ```
 
-> webpack.***.js 为响应的配置未见，具体可参考 [配置-webpack中文文档](https://www.webpackjs.com/concepts/configuration/#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
+> webpack.***.js 为相应的配置文件，具体可参考 [配置-webpack中文文档](https://www.webpackjs.com/concepts/configuration/#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
 
 ###  1.1. <a name='config'></a>config配置示例
 
