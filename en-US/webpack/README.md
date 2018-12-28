@@ -1,3 +1,9 @@
+# webpack
+
+> *All codes are based on ES6+, if you are using ES5, please try to replace them, e.g. replace const with var*
+
+**webpack** is a static module bundler for modern Javascript applications.
+
 * 1. [How to use](#Howtouse)
 	* 1.1. [ Example of webpack](#Exampleofwebpack)
 * 2. [ Scenario](#Scenario)
@@ -10,12 +16,6 @@
 		* 2.2.2. [Config files](#Configfiles)
 		* 2.2.3. [ Q & A](#QA-1)
 	* 2.3. [ I want to serve all images linked in html into html.](#Iwanttoserveallimageslinkedinhtmlintohtml.)
-
-# webpack
-
-> *All codes are based on ES6+, if you are using ES5, please try to replace them, e.g. replace const with var*
-
-**webpack** is a static module bundler for modern Javascript applications.
 
 ##  1. <a name='Howtouse'></a>How to use
 
