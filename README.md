@@ -1,10 +1,11 @@
-# Problem Logs of front end
+English | [中文](README_zh-CN.md)
 
----
-[中文](README_zh-CN.md)
+<h1 align="center">Problem Logs of front end</h1>
 
-> Write problem & solution of front end we may meet.
+<div align="center">Write problem & solution of front end we may meet.</div>
 
 * [webpack](en-US/webpack/README.md)
 
-Welcome to star!
+---
+
+<div align="center">Welcome to star! :star: </div>
