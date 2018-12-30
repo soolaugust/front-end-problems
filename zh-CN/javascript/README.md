@@ -1,0 +1,25 @@
+# Javascript
+
+## Scenario
+
+### Change Text to Image
+
+Sometimes, we want to change a text an image, for best practice, I think better  way is  [canvas - MDN](https://developer.mozilla.org/kab/docs/Web/API/Canvas_API) :
+
+```javascript
+var canvasElement = document.createElement('canvas');
+canvasElement.width = 186;
+canvasElement.height = 222;
+var canvas = canvasElement.getContext('2d');
+canvas.fillStyle = "#f6d021";
+canvas.textAlign = "center";
+canvas.textBaseline = "middle";
+canvas.font = "bold 40px KaiTi, arial, helvetica, sans-serif";
+canvas.fillText("This will be animage",0,0);
+```
+
+Now we have created an *canvas* element，then we can change this element to *Base64 URL* then use it as *src* of *<img />*：
+
+```html
+<img src= canvas.canvas.toDataURL()  />
+```
