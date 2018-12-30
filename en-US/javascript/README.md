@@ -1,13 +1,13 @@
 # Javascript
 
-* 1. [场景](#)
-	* 1.1. [将文字变成转变成相应的图片](#-1)
+* 1. [Scenario](#Scenario)
+	* 1.1. [Change Text to Image](#ChangeTexttoImage)
 
-##  1. <a name=''></a>场景
+##  1. <a name='Scenario'></a>Scenario
 
-###  1.1. <a name='-1'></a>将文字变成转变成相应的图片
+###  1.1. <a name='ChangeTexttoImage'></a>Change Text to Image
 
-有些时候，我们需要将文字转化成图片，然后进行使用。而我推荐的方法是使用 [canvas - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Basic_usage) :
+Sometimes, we want to change a text an image, for best practice, I think better  way is  [canvas - MDN](https://developer.mozilla.org/kab/docs/Web/API/Canvas_API) :
 
 ```javascript
 var canvasElement = document.createElement('canvas');
@@ -21,7 +21,7 @@ canvas.font = "bold 40px KaiTi, arial, helvetica, sans-serif";
 canvas.fillText("This will be animage",0,0);
 ```
 
-这个时候我们已经基于文字创建了一个 *canvas* 元素，如果需要按照作为 *<img>* 元素的 *src* 使用，则需要将 *canvas* 转化为 *Base64 URL* ：
+Now we have created an *canvas* element，then we can change this element to *Base64 URL* then use it as *src* of *<img />*：
 
 ```html
 <img src= canvas.canvas.toDataURL()  />
