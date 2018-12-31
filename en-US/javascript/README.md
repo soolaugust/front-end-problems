@@ -2,6 +2,7 @@
 
 * 1. [Scenario](#Scenario)
 	* 1.1. [Change Text to Image](#ChangeTexttoImage)
+	* 1.2. [Read local json file synchronously](#Readlocaljsonfilesynchronously)
 
 ##  1. <a name='Scenario'></a>Scenario
 
@@ -25,4 +26,25 @@ Now we have created an *canvas* element，then we can change this element to *Ba
 
 ```html
 <img src= canvas.canvas.toDataURL()  />
+```
+
+###  1.2. <a name='Readlocaljsonfilesynchronously'></a>Read local json file synchronously
+
+Sometimes we need to read json file synchronously, as we can use *require()* function in *NodeJS*, but if we are not developing project based on NodeJS, we could try following way: 
+
+> demo.html
+
+```html
+<script type="text/javascript" src=".../***.json"> </script>
+```
+> **\*\*\*.json**
+
+```json
+jsonContent = `[json content]`
+```
+
+> demo.js
+
+```javascript
+var readedJson = jsonContent;1
 ```
