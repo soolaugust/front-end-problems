@@ -12,7 +12,8 @@ English | [中文](README_zh-CN.md)
 	* [ serve css file into bundle.](en-US/webpack/README.md#servecssfileintobundle.)
 	* [ I want to serve all images linked in html into html.](en-US/webpack/README.md#Iwanttoserveallimageslinkedinhtmlintohtml.)
 * [ant-degin-pro](en-US/ant-design-pro/README.md)
-	* [**model** in **@connect()** is **undefined**](en-US/ant-design-pro/README.md#modelinconnectisundefined)
+	* [model in @connect() is undefined](en-US/ant-design-pro/README.md#modelinconnectisundefined)
+	* [custom styles doesn't work](en-US/ant-design-pro/README.md#customstylesdoesntwork)
 
 ---
 
