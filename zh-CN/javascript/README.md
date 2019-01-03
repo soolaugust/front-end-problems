@@ -22,7 +22,7 @@ canvas.font = "bold 40px KaiTi, arial, helvetica, sans-serif";
 canvas.fillText("This will be animage",0,0);
 ```
 
-这个时候我们已经基于文字创建了一个 *canvas* 元素，如果需要按照作为 *<img>* 元素的 *src* 使用，则需要将 *canvas* 转化为 *Base64 URL* ：
+这个时候我们已经基于文字创建了一个 *canvas* 元素，如果需要按照作为 *\<img />* 元素的 *src* 使用，则需要将 *canvas* 转化为 *Base64 URL* ：
 
 ```html
 <img src= canvas.canvas.toDataURL()  />
@@ -46,5 +46,5 @@ jsonContent = `[json content]`
 > demo.js
 
 ```javascript
-var readedJson = jsonContent;1
+var readedJson = jsonContent;
 ```

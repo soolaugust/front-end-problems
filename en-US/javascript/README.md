@@ -22,7 +22,7 @@ canvas.font = "bold 40px KaiTi, arial, helvetica, sans-serif";
 canvas.fillText("This will be animage",0,0);
 ```
 
-Now we have created an *canvas* element，then we can change this element to *Base64 URL* then use it as *src* of *<img />*：
+Now we have created an *canvas* element，then we can change this element to *Base64 URL* then use it as *src* of *\<img />*：
 
 ```html
 <img src= canvas.canvas.toDataURL()  />
@@ -46,5 +46,5 @@ jsonContent = `[json content]`
 > demo.js
 
 ```javascript
-var readedJson = jsonContent;1
+var readedJson = jsonContent;
 ```
