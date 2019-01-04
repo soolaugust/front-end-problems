@@ -3,6 +3,7 @@
 * 1. [Scenario](#Scenario)
 	* 1.1. [Change Text to Image](#ChangeTexttoImage)
 	* 1.2. [Read local json file synchronously](#Readlocaljsonfilesynchronously)
+	* 1.3. [Create loop animation](#LoopAnimation)
 
 ##  1. <a name='Scenario'></a>Scenario
 
@@ -47,4 +48,45 @@ jsonContent = `[json content]`
 
 ```javascript
 var readedJson = jsonContent;
+```
+
+### 1.3. <a name='LoopAnimation'></a>Create loop animation
+
+Sometimes we need create a loop animation, of course, we could implement it with other plugins, we could also use oringinal *JavaScript* :
+
+> *demo.html*
+
+```html
+...
+<div class="animation">
+	...
+</div> 
+
+<div class="start"></div> // start button
+<div class="stop"></div> // end button
+...
+```
+
+> *demo.js*
+
+```javascript
+var internal; // this is for stop animation manually
+
+Jquery('.start').on('click', function() {
+	var end_status = {opacity:'0.5'};  // end status of one animation
+	internal = setInterval(function() {
+		$('.animation').animate(css_chison_robot, 200, function() {
+			if(end_status.opacity==='0.5') end_status.opacity = '1';  // after one animation end, back to start status 
+			else end_status.opacity='0.5';
+		})
+	}, 200);
+})
+
+Jquery('.stop').on('click', function() {
+	clearInterval(internal);
+	$('.animation').animate({
+		opacity:'1' // after manully stop, status should be reset
+	});
+}
+
 ```

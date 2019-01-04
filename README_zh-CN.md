@@ -7,6 +7,7 @@
 * [Javascript](zh-CN/javascript/README.md)
 	* [将文字变成转变成相应的图片](zh-CN/javascript/README.md#-1)
 	* [同步读取本地Json文件](zh-CN/javascript/README.md#Json)
+	* [设置循环动画](zh-CN/javascript/README.md#LoopAnimation)
 * [webpack](zh-CN/webpack/README.md)
 	* [使用webpack打包成一个html](zh-CN/webpack/README.md#webpackhtml)
 	* [需要将css编入js中](zh-CN/webpack/README.md#cssjs)
