@@ -1,1 +1,7 @@
 theme: jekyll-theme-dinky
+
+# Site settings
+title: Front-End Problems
+SEOTitle: Soolaugst's blog | Soolaugust的博客
+email: soolaugust@gmail.com
+keyword: "Soolaugust, soolaugust, Front-End"
