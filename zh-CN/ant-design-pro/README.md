@@ -4,6 +4,7 @@
 
 * 1. [常见问题](#)
 	* 1.1. [*@connect()* 引入的 *model* 是 *undefined* 的](#connectmodelundefined)
+	* 1.2. [response命令台报错， 显示 'Unexpected token ... in Json ...'](#responseUnexpectedtoken...inJson...)
 * 2. [自定义样式不起作用](#-1)
 
 ##  1. <a name=''></a>常见问题
@@ -36,6 +37,28 @@
     + b
       b_page.js  // 在这里引用了a.js，导致connect引入的model是undefined
 ```
+
+###  1.2. <a name='responseUnexpectedtoken...inJson...'></a>response命令台报错， 显示 `Unexpected token ... in Json ...`
+
+如果直接查看response是正常的，那就需要查看response的返回类型，如果是其他类型，并且无法正常转换成json，则会报这个错误。
+
+根本原因在 request.js 的逻辑中：
+
+```javascript
+return fetch(url, newOptions)
+.then(checkStatus)
+.then(response => cachedSave(response, hashcode))
+.then(response => {
+  // DELETE and 204 do not return data by default
+  // using .json will report an error.
+  if (newOptions.method === 'DELETE' || response.status === 204) {
+    return response.text();
+  }
+  return response.json();
+})
+```
+
+我们可以看到除了 `delete` 和 `204` 的情况，其他全部转换成json，所以需要在这段逻辑中加入自己的类型转换。
 
 ##  2. <a name='-1'></a>自定义样式不起作用
 

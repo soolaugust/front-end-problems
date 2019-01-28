@@ -3,7 +3,8 @@
 * 1. [场景](#)
 	* 1.1. [将文字变成转变成相应的图片](#-1)
 	* 1.2. [同步读取本地Json文件](#Json)
-	* 1.3. [设置循环动画](#LoopAnimation)
+	* 1.3. [设置循环动画](#-1)
+	* 1.4. [处理 `content-type: application/octet-stream` 的 返回类型 <small>[React]</small>](#content-type:applicationoctet-streamsmallReactsmall)
 
 ##  1. <a name=''></a>场景
 
@@ -50,7 +51,7 @@ jsonContent = `[json content]`
 var readedJson = jsonContent;
 ```
 
-### 1.3. <a name='LoopAnimation'></a>设置循环动画
+###  1.3. <a name='-1'></a>设置循环动画
 
 有时，我们需要设置一个循环播放的动画。而网上这方面的插件其实很多，但是如果我们想要使用原生的 *JavaScript* 来实现这个效果，也是可以的。
 
@@ -90,3 +91,45 @@ Jquery('.stop').on('click', function() {
 }
 
 ```
+
+###  1.4. <a name='content-type:applicationoctet-streamsmallReactsmall'></a>处理 `content-type: application/octet-stream` 的 返回类型 <small>[React]</small>
+
+有时服务器提供的下载接口返回类型是 `application/octet-stream`, 这个是通用的二进制流响应，那么如何用 js 来处理这个请求呢？
+
+其实很简单，我们只需要转换成下载内容就可以了。
+
+比如 返回的头部信息是下面这种：
+
+```json
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+connection: close
+content-disposition: attachment; filename=111.txt
+content-type: application/octet-stream
+Date: Mon, 28 Jan 2019 08:31:00 GMT
+expires: 0
+pragma: no-cache
+referrer-policy: no-referrer
+transfer-encoding: chunked
+x-content-type-options: nosniff
+x-frame-options: DENY
+X-Powered-By: Express
+x-xss-protection: 1 ; mode=block
+```
+
+那么在代码中只需要这样处理：
+
+```javascript
+function handleResponse = response => {
+	response.blob().then(blob => {
+		const link = document.createElement('a');
+		const url = URL.createObjectURL(blob);
+		console.log(url);
+		link.href = url;
+		link.download = '111.txt';
+		link.click();
+	})
+}
+
+```
+
+这样就会自动调用浏览器的下载行为。

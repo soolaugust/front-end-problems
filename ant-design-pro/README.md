@@ -4,9 +4,8 @@
 
 * 1. [Q & A](#QA)
 	* 1.1. [**model** in **@connect()** is **undefined**](#modelinconnectisundefined)
+	* 1.2. [console report error `Unexpected token ... in Json ...` with correct response.](#consolereporterrorUnexpectedtoken...inJson...withcorrectresponse.)
 * 2. [custom styles doesn't work](#customstylesdoesntwork)
-
-    
 
 ##  1. <a name='QA'></a>Q & A
 
@@ -42,6 +41,28 @@ So if you use model defined in another page, you will got **undefined** problem.
     + b
       b_page.js  // here you connect model defined in a.js, you will got undefined problem.
 ```
+
+###  1.2. <a name='consolereporterrorUnexpectedtoken...inJson...withcorrectresponse.'></a>console report error `Unexpected token ... in Json ...` with correct response.
+
+If you are ensure your response is correct, you may need to check the type of your response, console will report error when response type is not `json` and cannot convert response body to `json`.
+
+This is because `request.js` handle response like following：
+
+```javascript
+return fetch(url, newOptions)
+.then(checkStatus)
+.then(response => cachedSave(response, hashcode))
+.then(response => {
+  // DELETE and 204 do not return data by default
+  // using .json will report an error.
+  if (newOptions.method === 'DELETE' || response.status === 204) {
+    return response.text();
+  }
+  return response.json();
+})
+```
+
+So if not `DELETE` method or status code is not `204`, all response will be converted to json. that's the reason console reporting error.
 
 ##  2. <a name='customstylesdoesntwork'></a>custom styles doesn't work
 

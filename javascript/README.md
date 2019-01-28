@@ -3,7 +3,8 @@
 * 1. [Scenario](#Scenario)
 	* 1.1. [Change Text to Image](#ChangeTexttoImage)
 	* 1.2. [Read local json file synchronously](#Readlocaljsonfilesynchronously)
-	* 1.3. [Create loop animation](#LoopAnimation)
+	* 1.3. [Create loop animation](#Createloopanimation)
+	* 1.4. [handle Response with  `content-type: application/octet-stream` <small>[React]</small>](#handleResponsewithcontent-type:applicationoctet-streamsmallReactsmall)
 
 ##  1. <a name='Scenario'></a>Scenario
 
@@ -50,7 +51,7 @@ jsonContent = `[json content]`
 var readedJson = jsonContent;
 ```
 
-### 1.3. <a name='LoopAnimation'></a>Create loop animation
+###  1.3. <a name='Createloopanimation'></a>Create loop animation
 
 Sometimes we need create a loop animation, of course, we could implement it with other plugins, we could also use oringinal *JavaScript* :
 
@@ -90,3 +91,45 @@ Jquery('.stop').on('click', function() {
 }
 
 ```
+
+###  1.4. <a name='handleResponsewithcontent-type:applicationoctet-streamsmallReactsmall'></a>handle Response with  `content-type: application/octet-stream` <small>[React]</small>
+
+Sometimes server will provide an interface with `application/octet-stream`, usually it's related with file operator, so how we handle this using js?
+
+Actually it's very easy, make it as a download content will be okay.
+
+e.g.
+
+```json
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+connection: close
+content-disposition: attachment; filename=111.txt
+content-type: application/octet-stream
+Date: Mon, 28 Jan 2019 08:31:00 GMT
+expires: 0
+pragma: no-cache
+referrer-policy: no-referrer
+transfer-encoding: chunked
+x-content-type-options: nosniff
+x-frame-options: DENY
+X-Powered-By: Express
+x-xss-protection: 1 ; mode=block
+```
+
+We can handle this response by following codes:
+
+```javascript
+function handleResponse = response => {
+	response.blob().then(blob => {
+		const link = document.createElement('a');
+		const url = URL.createObjectURL(blob);
+		console.log(url);
+		link.href = url;
+		link.download = '111.txt';
+		link.click();
+	})
+}
+
+```
+
+Then you'll see browser will call download action.

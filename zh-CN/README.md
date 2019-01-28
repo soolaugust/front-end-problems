@@ -8,6 +8,7 @@
 	* [将文字变成转变成相应的图片](javascript/README.md#-1)
 	* [同步读取本地Json文件](javascript/README.md#Json)
 	* [设置循环动画](javascript/README.md#LoopAnimation)
+	* [处理 'content-type: application/octet-stream' 的 返回类型 <small>[React]</small>](#content-type:applicationoctet-streamsmallReactsmall)
 * [webpack](webpack/README.md)
 	* [使用webpack打包成一个html](webpack/README.md#webpackhtml)
 	* [需要将css编入js中](webpack/README.md#cssjs)
@@ -15,6 +16,7 @@
 * [ant-degin-pro](ant-design-pro/README.md)
 	* [*@connect()* 引入的 *model* 是 *undefined* 的](ant-design-pro/README.md#connectmodelundefined)
 	* [自定义样式不起作用](ant-design-pro/README.md#-1)
+	*  [response命令台报错， 显示 'Unexpected token ... in Json ...'](ant-design-pro/README.md#responseUnexpectedtoken...inJson...)
 
 ---
 
