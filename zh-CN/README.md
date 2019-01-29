@@ -8,7 +8,7 @@
 	* [将文字变成转变成相应的图片](javascript/README.md#-1)
 	* [同步读取本地Json文件](javascript/README.md#Json)
 	* [设置循环动画](javascript/README.md#LoopAnimation)
-	* [处理 'content-type: application/octet-stream' 的 返回类型 <small>[React]</small>](#content-type:applicationoctet-streamsmallReactsmall)
+	* [处理 'content-type: application/octet-stream' 的 返回类型 <small>[React]</small>](javascript/README.md#content-type:applicationoctet-streamsmallReactsmall)
 * [webpack](webpack/README.md)
 	* [使用webpack打包成一个html](webpack/README.md#webpackhtml)
 	* [需要将css编入js中](webpack/README.md#cssjs)
