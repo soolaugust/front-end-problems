@@ -6,23 +6,23 @@
 
 以“Ant”为例，比如说我们需要下面的这几个图标：
 
-![](/img/iconfont-index.png)
+![](../../img/iconfont-index.png)
 
 首先加入到购物车中，然后点击购物车，如下图所示：
 
-![](/img/iconfont-shopping-car.png)
+![](../../img/iconfont-shopping-car.png)
 
 选择添加到项目中，然后新建项目：
 
-![](/img/iconfont-create-project.png)
+![](../../img/iconfont-create-project.png)
 
 这时会跳转到项目页面，点击“更多操作”选择“编辑项目”：
 
-![](/img/iconfont-edit-project.png)
+![](../../img/iconfont-edit-project.png)
 
 编辑好了之后，选择下载到本地，然后解压后将里面iconfont*开头的文件放到项目的`/public`下面，如下图所示：
 
-![](/img/project-public.png)
+![](../../img/project-public.png)
 
 然后在 `/src/global.less` 中添加下面的代码(这里其实可以不在这里添加，新建一个也可以）
 
