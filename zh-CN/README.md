@@ -17,7 +17,7 @@
 	* [*@connect()* 引入的 *model* 是 *undefined* 的](ant-design-pro/README.md#connectmodelundefined)
 	* [自定义样式不起作用](ant-design-pro/README.md#-1)
 	*  [response命令台报错， 显示 'Unexpected token ... in Json ...'](ant-design-pro/README.md#responseUnexpectedtoken...inJson...)
-	* [菜单栏使用自定义Icon （iconfont.cn）](/zh-CN/ant-design-pro/custom_icon_in_sidermenu.md)
+	* [菜单栏使用自定义Icon （iconfont.cn）](ant-design-pro/custom_icon_in_sidermenu.md)
 
 ---
 
