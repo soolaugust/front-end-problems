@@ -1,5 +1,7 @@
 <h1>菜单栏使用自定义Icon （iconfont.cn）</h1>
 
+**最新版本已经支持导入，参照[增加IconFont组件、菜单图标可以使用自己的IconFont项目图标](https://github.com/ant-design/ant-design-pro/pull/3517), 直接将iconfont项目文件下载到项目中，比如 '/public'下面，然后在'src/defaultSettings.js中引入，例如"iconfontUrl: '/iconfont.js',",然后直接在菜单栏使用即可， 比如 icon: icon-test**
+
 最近因为项目的要求，需要更改 Ant Design Pro 的菜单栏图标。找了一大圈资料，踩了不少的坑，最后才完成。所以这里记录下过程。
 
 ## 在iconfont上找寻自己需要的图标
